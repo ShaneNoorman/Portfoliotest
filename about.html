@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Shané Noorman</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --sage: #A3B18A;
+    --sage-dark: #588157;
+    --white: #ffffff;
+    --light-bg: #F6F8F4;
+    --text-dark: #2F3E46;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+/* NAVBAR */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.6);  /* more transparent */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+header h1 {
+    font-size: 20px;
+    color: var(--sage-dark);
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--sage-dark);
+}
+
+/* PAGE CONTENT */
+.about-container {
+    padding: 100px 12%;
+    max-width: 1000px;
+}
+
+.about-container h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
+    color: var(--sage-dark);
+}
+
+.about-container p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.highlight {
+    color: var(--sage-dark);
+    font-weight: 600;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h2>Shané Noorman</h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html">Projects</a>
+        <a href="index.html">Contact</a>
+    </nav>
+</header>
+
+<div class="about-container">
+    <h1>About Me</h1>
+
+    <p>
+        I am a data analyst with an academic foundation in Astrophysics and computational modelling.
+        My background in physics trained me to approach problems systematically,
+        validate assumptions rigorously, and extract signal from noise.
+    </p>
+
+    <p>
+        During my transition into industry, I applied these skills within media intelligence and
+        analytics environments, working with large, complex datasets to deliver
+        <span class="highlight">clear, strategic insights</span> to clients.
+    </p>
+
+    <p>
+        My core technical strengths include Python, SQL, Excel, and data visualisation tools.
+        I am particularly interested in bridging scientific methodology with business intelligence
+        and machine learning applications.
+    </p>
+
+    <p>
+        I thrive in environments where analytical depth meets real-world impact —
+        and I am continuously expanding my technical stack to move further into
+        data science and advanced analytics roles.
+    </p>
+
+</div>
+
+</body>
+</html>

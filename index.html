@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shané Noorman | Data Analyst Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --sage: #A3B18A;
+    --sage-dark: #588157;
+    --white: #ffffff;
+    --light-bg: #F6F8F4;
+    --text-dark: #2F3E46;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.6);  /* more transparent */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+header h1 {
+    font-size: 20px;
+    color: var(--sage-dark);
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--sage-dark);
+}
+
+.hero {
+    padding: 110px 8%;
+    background: linear-gradient(135deg, #ffffff 0%, #eef2ed 100%);
+}
+
+.hero-container {
+    display: flex;
+    align-items: flex-start;   /* 🔥 change this */
+    justify-content: center;
+    gap: 70px;
+    flex-wrap: wrap;
+}
+
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-left img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+    transition: 0.4s ease;
+}
+
+.hero-left img:hover {
+    transform: scale(1.02);
+}
+
+.contact-buttons {
+    margin-top: 22px;
+    display: flex;
+    gap: 12px;
+}
+
+.icon-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--sage-dark);
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.icon-btn:hover {
+    background: #3f5f52;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h2 {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.hero-text span {
+    color: var(--sage-dark);
+}
+
+.hero-main {
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hero-sub {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    color: #3a4a42;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--sage-dark);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 2px solid var(--sage-dark);
+    color: var(--sage-dark);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: var(--sage-dark);
+    color: white;
+}
+.btn:hover {
+    background: var(--sage);
+}
+
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.card p,
+.card li {
+    font-size: 18px;
+    line-height: 1.7;
+}
+.card {
+    background: var(--white);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.skill {
+    background: var(--sage);
+    color: var(--white);
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+footer {
+    background: var(--white);
+    padding: 30px 8%;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+@media(max-width: 768px) {
+    .hero h2 {
+        font-size: 28px;
+    }
+}
+
+
+.hero-skills {
+    margin: 20px 0 30px 0;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.skill-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(88,129,87,0.08);
+    border: 1px solid rgba(88,129,87,0.2);
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--sage-dark);
+    transition: 0.25s ease;
+}
+
+.skill-pill i {
+    font-size: 16px;
+}
+
+.skill-pill:hover {
+    background: var(--sage-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/*new stuff*/
+
+/* ============================= */
+/* TIMELINE SECTION */
+/* ============================= */
+
+.timeline-section {
+  padding: 120px 10%;
+  background: transparent;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 80px;
+  font-weight: 600;
+}
+
+/* ============================= */
+/* TIMELINE CONTAINER */
+/* ============================= */
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Sage Gradient Center Line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  bottom: 40px;
+  width: 3px;
+
+  background: linear-gradient(
+    to bottom,
+    #A3B18A,
+    #88A06A,
+    #588157
+  );
+
+  transform: translateX(-50%);
+  transform-origin: top;
+  animation: growLine 1.6s ease forwards;
+}
+
+/* Line Grow Animation */
+@keyframes growLine {
+  from { height: 0; }
+  to { height: 100%; }
+}
+
+/* ============================= */
+/* TIMELINE ITEMS */
+/* ============================= */
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 40px 60px;
+
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Stagger animations */
+.timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.timeline-item:nth-child(2) { animation-delay: 0.4s; }
+.timeline-item:nth-child(3) { animation-delay: 0.6s; }
+.timeline-item:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Positioning */
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* ============================= */
+/* DOTS */
+/* ============================= */
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 55px;
+  width: 16px;
+  height: 16px;
+
+  background: #A3B18A;
+  border-radius: 50%;
+
+  box-shadow: 0 0 12px rgba(163, 177, 138, 0.7);
+
+  z-index: 2;
+}
+
+.timeline-item.left::before {
+  right: -8px;
+}
+
+.timeline-item.right::before {
+  left: -8px;
+}
+
+/* ============================= */
+/* CONTENT CARDS */
+/* ============================= */
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+
+  padding: 30px;
+  border-radius: 15px;
+
+  border: 1px solid rgba(163, 177, 138, 0.2);
+
+  transition: 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 0 20px rgba(163, 177, 138, 0.25),
+    0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Titles */
+
+.timeline-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.timeline-content h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+/* Paragraphs */
+
+.timeline-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ============================= */
+/* JOB DETAILS LIST */
+/* ============================= */
+
+.job-details {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.timeline-item.left .job-details {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.job-details li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ============================= */
+/* SKILL TAGS */
+/* ============================= */
+
+.skills {
+  margin-top: 20px;
+}
+
+.skills span {
+  display: inline-block;
+
+  background: rgba(163, 177, 138, 0.12);
+  border: 1px solid rgba(163, 177, 138, 0.3);
+
+  padding: 6px 12px;
+  margin: 6px 6px 0 0;
+
+  font-size: 0.8rem;
+  border-radius: 20px;
+
+  transition: 0.3s ease;
+}
+
+.skills span:hover {
+  background: rgba(163, 177, 138, 0.25);
+}
+
+/* ============================= */
+/* MOBILE RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 900px) {
+
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 20px;
+    text-align: left !important;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item::before {
+    left: 0;
+  }
+}
+
+/* ============================= */
+/* PROJECTS SECTION */
+/* ============================= */
+
+.projects-section {
+  padding: 120px 10%;
+  background: #ffffff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Project Cards */
+
+.project-card {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(163,177,138,0.2);
+
+  padding: 30px;
+  border-radius: 14px;
+
+  transition: 0.3s ease;
+  min-height: 260px;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 0 20px rgba(163, 177, 138, 0.25),
+    0 10px 30px rgba(0,0,0,0.08);
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Skills tags reuse your existing .skills style */
+
+/* ============================= */
+/* SKILLS SECTION */
+/* ============================= */
+
+.skills-section {
+  padding: 120px 8%;
+  text-align: center;
+  background: #ffffff;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 60px;
+}
+
+/* Big Skill Buttons */
+
+.big-skill {
+  width: 180px;
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  background: rgba(163, 177, 138, 0.08);
+  border: 1px solid rgba(163, 177, 138, 0.25);
+
+  border-radius: 18px;
+
+  font-size: 18px;
+  font-weight: 500;
+  color: #3a4a42;
+
+  transition: 0.35s ease;
+  cursor: pointer;
+}
+
+/* Icons */
+
+.big-skill i {
+  font-size: 32px;
+  color: #588157;
+}
+
+/* Hover Effects */
+
+.big-skill:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 0 25px rgba(163, 177, 138, 0.3),
+    0 12px 35px rgba(0,0,0,0.08);
+
+  background: white;
+}
+
+</style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<body>
+
+<header>
+    <h1>Shané Noorman</h1>
+    <nav>
+        <a href="about.html">About</a>
+        <a href="#timeline-section">Experience</a>
+        <a href="#projects-section">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-container">
+
+        <!-- LEFT SIDE (Image + Contact Buttons) -->
+        <div class="hero-left">
+            <img src="headshot2026.jpg" alt="Shané Noorman">
+
+            <div class="contact-buttons">
+                <a href="mailto:noorman.shane5@gmail.com" class="icon-btn" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/shané-noorman-69a611189"
+                    target="_blank"
+                    class="icon-btn"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE (Text) -->
+        <div class="hero-text">
+            <h2>Hi, I’m <span>Shané Noorman</span></h2>
+
+            <p class="hero-main">
+                Data Analyst with an Astrophysics background specialising in statistical modelling,
+                quantitative analysis, and data-driven decision systems.
+            </p>
+
+            <div class="hero-location">
+                <i class="fas fa-location-dot"></i>
+                <span>Cape Town, South Africa</span>
+            </div>
+
+            <!-- <p class="hero-sub">
+                I translate complex datasets into strategic insights using Python, SQL, and advanced analytical methods.
+                My work sits at the intersection of scientific rigour and business impact.
+            </p> -->
+
+            <div class="hero-skills">
+                <div class="skill-pill">
+                    <i class="fab fa-python"></i>
+                    Python
+                </div>
+
+                <div class="skill-pill">
+                    <i class="fas fa-file-excel"></i>
+                    Excel
+                </div>
+
+                <div class="skill-pill">
+                    <i class="fas fa-file-excel"></i>
+                    SQL
+                </div>
+
+            </div>
+
+            <div class="hero-buttons">
+                <a href="Shane_Noorman_Resume2026.pdf" class="btn" download>Download CV</a>
+                <a href="#projects" class="btn-outline">View Projects</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="timeline-section">
+  <h2 class="section-title">Experience</h2>
+
+  <div class="timeline">
+
+    <!-- Current Job -->
+    <div class="timeline-item left">
+      <div class="timeline-content">
+        <h3>Junior Data Analyst</h3>
+        <h4>Meltwater | July 2025 – Present</h4>
+        <p>
+          Working with large operational datasets to improve reporting accuracy 
+          and automate business insights across solar distribution teams.
+        </p>
+
+        <ul class="job-details">
+          <li>Automated Excel reports using Python</li>
+          <li>Built SQL queries for business performance analysis</li>
+          <li>Improved reporting efficiency by 30%</li>
+        </ul>
+
+        <div class="skills">
+          <span>Powerpoint</span>
+          <span>Excel</span>
+          <span>Data Cleaning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Previous Job -->
+    <div class="timeline-item right">
+      <div class="timeline-content">
+        <h3>Junior Data Analyst Intern</h3>
+        <h4>Meltwater | December 2024 – June 2025</h4>
+        <p>
+          Assisted in building dashboards and conducting exploratory data analysis
+          for internal performance monitoring.
+        </p>
+
+        <ul class="job-details">
+          <li>Created KPI dashboards</li>
+          <li>Performed EDA on sales datasets</li>
+          <li>Built automated reporting templates</li>
+        </ul>
+
+        <div class="skills">
+          <span>Powerpoint</span>
+          <span>Excel</span>
+          <span>Visualization</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="timeline-item left">
+      <div class="timeline-content">
+        <h3>BSc Honours in Astrophysics and Space Science</h3>
+        <h4>The University of Cape Town | 2022 – 2023</h4>
+        <p>
+          Focused on statistics, programming, and applied data modelling.
+        </p>
+
+        <div class="skills">
+          <span>Statistics</span>
+          <span>Python</span>
+          <span>Excel</span>
+          <span>Data Analysis</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="timeline-content">
+        <h3>BSc in Physical Sciences</h3>
+        <h4>The University of The Western Cape | 2019 – 2022</h4>
+        <p>
+          Focused on statistics, programming, and applied data modelling.
+        </p>
+
+        <div class="skills">
+          <span>Statistics</span>
+          <span>Python</span>
+          <span>Excel</span>
+          <span>Data Analysis</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="projects-section">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <h3>Photometric Study – MEERLICHT</h3>
+            <p>
+                Long-term astrophysical data analysis using Python.
+                Applied regression modelling and signal processing techniques.
+            </p>
+
+            <div class="skills">
+                <span>Python</span>
+                <span>NumPy</span>
+                <span>Matplotlib</span>
+                <span>SciPy</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>HPC Cluster Competition</h3>
+            <p>
+                Designed and benchmarked a high-performance computing cluster.
+                Installed OS environments and ran performance simulations.
+            </p>
+
+            <div class="skills">
+                <span>Linux</span>
+                <span>Computational Modelling</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Client Media Analytics Reporting</h3>
+            <p>
+                Built dashboards and automated reporting pipelines for client insights delivery.
+            </p>
+
+            <div class="skills">
+                <span>SQL</span>
+                <span>Excel</span>
+                <span>Visualization</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="skills-section">
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="big-skill">
+            <i class="fab fa-python"></i>
+            <span>Python</span>
+        </div>
+
+        <div class="big-skill">
+            <i class="fab fa-r"></i>
+            <span>R</span>
+        </div>
+
+        <div class="big-skill">
+            <i class="fas fa-database"></i>
+            <span>SQL</span>
+        </div>
+
+        <div class="big-skill">
+            <i class="fas fa-square-root-variable"></i>
+            <span>Matlab</span>
+        </div>
+
+        <div class="big-skill">
+            <i class="fas fa-file-excel"></i>
+            <span>Excel</span>
+        </div>
+
+        <div class="big-skill">
+            <i class="fas fa-file-powerpoint"></i>
+            <span>Powerpoint</span>
+        </div>
+
+        <div class="big-skill">
+            <i class="fas fa-chart-pie"></i>
+            <span>Tableau</span>
+        </div>
+
+        <div class="big-skill">
+            <i class="fas fa-chart-line"></i>
+            <span>Data Visualisation</span>
+        </div>
+
+        <div class="big-skill">
+            <i class="fas fa-brain"></i>
+            <span>Analytics</span>
+        </div>
+
+        
+
+    </div>
+</section>
+
+<section id="contact">
+    <h3 class="section-title">Let's Connect</h3>
+    <div class="card">
+        <p>Email: noorman.shane5@gmail.com</p>
+        <p>Phone: +27 62 131 9763</p>
+        <p>Location: Cape Town, South Africa</p>
+        <p>LinkedIn: linkedin.com/in/shané-noorman</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Shané Noorman | Data Analyst Portfolio
+</footer>
+
+</body>
+</html>
